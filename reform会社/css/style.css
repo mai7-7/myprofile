@@ -1,0 +1,836 @@
+@charset "utf-8";
+
+body {
+  text-align: center;
+  font-family: 'Noto Serif JP', serif, 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.img_logo {
+  max-width: 100%;
+}
+
+.img_1 {
+  margin: 10px;
+}
+
+#images {
+  width: 100%;
+  height: 80vh;
+  background: url(../images/living.jpg) no-repeat top center/ cover;
+}
+
+/* ヘッダー領域 */
+
+/*  ヘッダーの高さと横幅を調整する*/
+
+/* ハンバーガーメニュー作成 */
+
+/* メニューを画面上部に固定表示*/
+.gMenu {
+  /* z-index: 1; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  display: block;
+  width: 100%;
+  background: #f5f5f500;
+  transition: all .2s ease-in-out;
+}
+
+/* メニューアイコンを画面右上に固定*/
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+
+/* メニューアイコン（三本線）の真ん中の線です */
+
+.gMenu .menu-icon .navicon {
+  background: #B71B26;
+  display: block;
+  height: 2px;
+  width: 31px;
+  position: relative;
+  transition: background .4s ease-out;
+  /* 形が変わる時のアニメーション */
+}
+
+/* メニューアイコン（三本線）の上と下の線を疑似要素で追加 */
+
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #B71B26;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out;
+  /* 形が変わる時のアニメーション */
+  width: 100%;
+}
+
+.gMenu .menu-icon .navicon::before {
+  top: 10px;
+}
+
+/* 位置を上に */
+.gMenu .menu-icon .navicon::after {
+  top: -10px;
+}
+
+/* 位置を下に */
+/* 表示されるメニュー */
+
+.gMenu .sp-menu {
+  background-color: rgba(245, 245, 245, 0.9);
+  overflow: hidden;
+  max-height: 0;
+  /* ★最初は高さを0にして非表示状態に */
+  transition: max-height .6s;
+  /* 表示されるときのアニメーション */
+  text-align: center;
+
+}
+
+/* メニュー部分のデザインです */
+.gMenu .sp-menu li:first-of-type {
+  padding-top: 1px;
+
+}
+
+.gMenu .sp-menu li a {
+  display: block;
+  color: #333;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 20px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+
+.gMenu li {
+  transform: translateY(130px);
+}
+
+
+.gMenu .sp-menu li a:hover {
+  background-color: #f4f4f44c;
+  color: #333;
+  font-weight: 400;
+  /* background: linear-gradient(transparent 60%, #cd75b899 0%); */
+
+}
+
+/* チェックボックスは常に非表示 */
+.gMenu .menu-btn {
+  display: none;
+}
+
+/* チェックボックスがONの時の状態 */
+
+.gMenu .menu-btn:checked~.sp-menu {
+  max-width: 100%;
+  max-height: 100vh;
+  height: 100vh;
+  transition: max-height .6s;
+
+}
+
+/* メニューボタンの中央の線を非表示 */
+.gMenu .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+/* メニューボタンの上下の線を45度傾けて✕印*/
+
+.gMenu .menu-btn:checked~.menu-icon .navicon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.gMenu .menu-btn:checked~.menu-icon .navicon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.gMenu ul {
+  list-style: none;
+  padding: 5px 0;
+  margin-bottom: 100px;
+  margin-top: 0px;
+}
+
+.gMenu li {
+  text-align: center;
+}
+
+/*  ヘッダー領域終了*/
+
+/* メイン領域 */
+
+/* 中見出しに横線付加 ☑*/
+
+.ruby2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ruby2:before,
+.ruby2:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+}
+
+.ruby2:before {
+  margin-right: 1em;
+}
+
+.ruby2:after {
+  margin-left: 1em;
+}
+
+/* サービス */
+
+/* サービス内にある画像幅高さ調整 */
+/* 
+
+
+/* 中見出しに横線付加 */
+
+.ser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ser:before,
+.ser:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+}
+
+.ser:before {
+  margin-right: 1em;
+}
+
+.ser:after {
+  margin-left: 1em;
+}
+
+/* サービス内の文字サイズ調整 */
+
+.line p {
+  font-size: 20px;
+
+}
+
+/* ,moreの右寄せ☑ */
+
+.more a {
+  padding-left: 300px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* moreの横に右矢印作成・サイズ調整 ☑*/
+
+.more a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  margin-left: 5px;
+}
+
+.more a::after {
+  border-left-color: #333;
+
+}
+
+
+
+/* frowの中見出しに横線を引く☑ */
+
+.frow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+}
+
+.frow:before,
+.frow:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+
+}
+
+.frow:before {
+  margin-right: 1em;
+}
+
+.frow:after {
+  margin-left: 1em;
+}
+
+/* リスト作成 */
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* ☑ */
+.sample {
+  background-color: #333;
+  color: #fff;
+  list-style: none;
+  font-size: 16px;
+  border-radius: 32px;
+  width: 300px;
+  height: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/* リスト間にボタン作成 */
+
+
+.sample::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  margin: 0 auto;
+
+}
+
+.sample::after {
+  border-top-color: #B71B26;
+  margin-top: 15px;
+
+}
+
+ul.arrows {
+  padding-right: 30px;
+}
+
+/* frowの背景色☑ */
+
+.sublist {
+  background-color: #f0e9ed;
+}
+
+/* Q＆A */
+
+/* 中見出しに横線 ☑*/
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.item:before,
+.item:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+}
+
+.item:before {
+  margin-right: 1em;
+}
+
+.item:after {
+  margin-left: 1em;
+}
+
+/* Q&A */
+
+.black {
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 52%;
+  text-align: center;
+  margin: 5px;
+}
+
+.red {
+  background-color: #B71B26;
+  color: #fff;
+  font-size: 20px;
+  margin: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 52%;
+  text-align: center;
+}
+
+.Qa {
+  display: flex;
+}
+
+.Qa-box {
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+}
+
+.question {
+  margin: 80px 0;
+}
+
+/* formの中見出し横線 */
+
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.info:before,
+.info:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em;
+}
+
+.info:before {
+  margin-right: 1em;
+}
+
+.info:after {
+  margin-left: 1em;
+}
+
+/* form作成開始  ☑*/
+
+.formSec {
+  display: inline-block;
+  background-color: #f0e9ed;
+  text-align: center;
+}
+
+
+
+
+/* 必須項目 */
+
+span {
+  display: inline-block;
+  background: #B71B26;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 10%;
+}
+
+/* テキスト調整 */
+
+input,
+textarea {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 360px;
+  border: 1px solid #f0e9ed;
+}
+
+input#zipcode {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  margin-right: 90px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  height: 32px;
+}
+
+textarea {
+  height: 120px;
+}
+
+/* .yoko {
+  padding-right: 2px;
+} */
+
+/* .add_top {
+ display: b
+} */
+
+/* input .add_down {
+  margin-left: 40px; 
+} */
+
+/* .add_item {
+  display: flex;
+} */
+
+
+
+input[type="radio"] {
+  width: 15px;
+  margin: 10px;
+}
+
+/* ボタン作成 */
+
+.button input {
+  display: inline-block;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+.button::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  margin: 0 auto;
+  transform: translate(90px, -56px);
+
+}
+
+.button::after {
+  border-left-color: #fff;
+  margin-top: 15px;
+}
+
+/* form終了 */
+
+/* footer領域 */
+
+.copyright {
+  background-color: #333;
+  color: #fff;
+  width: 375px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: #333;
+  margin: 0 auto;
+}
+
+.arrow a {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(-45deg);
+  margin-top: 5px;
+}
+
+.arrow {
+  margin-right: 12px;
+  margin-left: 310px;
+  margin-top: 80px;
+}
+
+.pc-nav {
+  display: none;
+}
+
+/* //////////////////////////////////////////////////////////////
+
+PC向け　ここから
+
+
+///////////////////////////////////////////////////////////// */
+
+
+/* PC用スタイル */
+@media screen and (min-width: 768px) {
+
+  /* PC向けのスタイル */
+  body {
+    width: 1366px;
+    height: 4592px;
+  }
+
+  .gMenu {
+    display: none;
+
+  }
+
+  .pc-nav {
+    display: block;
+
+  }
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .img_logo {
+    width: 400px;
+    height: 32px;
+
+  }
+
+  #images {
+    /* max-width: 80vw; */
+    height: 40vw;
+    width: 100vw;
+    background: url(../images/pc.hero.jpg) no-repeat top center/ contain;
+
+  }
+
+
+
+
+  header {
+    width: 1318px;
+    height: 32px;
+    margin: 24px 0;
+    position: relative;
+  }
+
+  .flex {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+
+
+  .li {
+    width: 1366px;
+    height: 545px;
+  }
+
+
+  li {
+    margin: 0 0 0 15px;
+    font-size: 16px;
+    list-style: none;
+  }
+
+  .flex li a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .flex li a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .line {
+    display: flex;
+  }
+
+  /*  flow　リスト流れ*/
+  .arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 910px;
+    margin: 0 auto;
+  }
+
+  .sample {
+    position: relative;
+    padding-top: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 60px;
+    height: 280px;
+    text-align: center;
+    writing-mode: vertical-rl;
+  }
+
+
+  .sample::after {
+    position: absolute;
+    left: 90px;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    width: 10px;
+    height: 10px;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-left: 16px solid #B71B26;
+
+  }
+
+
+  .arrows {
+    display: flex;
+  }
+
+  .question {
+    margin-top: 160px;
+  }
+
+  .Qa-box {
+    margin: 0 189px;
+    margin-bottom: 160px;
+
+  }
+
+  .Qa {
+    width: 988px;
+    height: 120px;
+    margin-bottom: 48px;
+    font-size: 20px;
+  }
+
+  .formSec {
+    background-color: #c4c2bc;
+    width: 1366px;
+    height: 1246px;
+    margin: auto;
+  }
+
+  .form-box {
+    background-color: #f0e9ed;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP';
+    width: 1026px;
+    height: 1028px;
+    /* margin: 50px 60px; */
+    margin: 0 auto;
+    padding-left: 80px;
+    padding-top: 50px;
+    text-align: center;
+
+  }
+
+
+  input,
+  textarea {
+    display: inline;
+    text-align: left;
+  }
+
+  textarea {
+    margin: initial;
+  }
+
+  textarea {
+    width: 500px;
+    height: 208px;
+  }
+
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 474px;
+    height: 52px;
+    margin-left: 10px;
+  }
+
+
+  input#zipcode {
+    width: 300px;
+    height: 52px;
+    /* transform: translateX(-150px); */
+  }
+
+  /* p.add_item {
+
+    margin-right: 30px;
+  } */
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    text-align: left;
+  }
+
+
+  pan {
+    display: inline;
+  }
+
+
+  .box2 {
+    position: static;
+
+
+  }
+
+  .box3 {
+    position: static;
+    text-align: center;
+  }
+
+
+
+  .copyright {
+    width: 1366px;
+    height: 62px;
+  }
+
+  .arrow {
+    margin-right: 24px;
+    margin-left: 1100px;
+  }
+
+
+
+
+}
