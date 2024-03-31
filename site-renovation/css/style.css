@@ -1,0 +1,831 @@
+@charset "utf-8";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: "Noto Sans JP", "Noto Serif JP", sans-serif;
+  font-size: 14px;
+  background: #fff;
+}
+
+/* * {
+  outline: 1px solid #B71B26;
+}  */
+
+
+h2 {
+  font-family: "Noto Serif JP";
+  font-size: 28px;
+  text-align: center;
+}
+
+/* header領域　SP */
+.header_img1 {
+  width: 240px;
+  height: 20px;
+  margin-right: auto;
+  margin-left: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+
+
+.header_img2 {
+  max-width: 100%;
+
+}
+
+.img_item2 {
+  width: 100%;
+  height: 545px;
+  background: url(../images2/hero.jpg) center/cover no-repeat;
+  margin-bottom: 160px;
+}
+
+/* ハンバーガーメニュー作成開始 */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  z-index: 25;
+}
+
+/* チェックボックスを非表示に */
+.hamburger-menu .menu-btn-check {
+  display: none;
+}
+
+/* アイコンの位置を右上に固定 */
+.hamburger-menu .menu-btn {
+  position: absolute;
+  right: 8px;
+  top: 15px;
+  padding-top: 5px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.hamburger-menu .menu-btn menu_bg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* span要素で三本線を作成 */
+.hamburger-menu .menu-btn .nav_icon {
+  display: flex;
+  flex-direction: row;
+  background-color: #B71B26;
+  height: 2px;
+  width: 36px;
+  position: relative;
+  transition: all0.4s ease-out;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 上下線を表示 */
+.hamburger-menu .menu-btn .nav_icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #B71B26;
+  top: -12px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s ease-out;
+}
+
+.hamburger-menu .menu-btn .nav_icon::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #B71B26;
+  top: 12px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s ease-out;
+}
+
+/*  メニュースタイル設定 */
+.hamburger-menu ul {
+  background-color: #ffffff73;
+  list-style: none;
+  text-align: center;
+  /* チェックが入っていないときに中が見えないようにする設定 */
+  overflow: hidden;
+  /* 高さを０にすることによって非表示にする 
+  */
+  max-height: 0;
+}
+
+.hamburger-menu .menu-btn-check:checked~ul {
+  height: 573px;
+  padding: 68px;
+  width: 100%;
+  max-height: 100%;
+}
+
+.hamburger-menu ul li {
+  font-size: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+}
+
+.hamburger-menu a {
+  font-family: Noto Serif JP;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.hamburger-menu a:hover {
+  color: #ffd6f0;
+}
+
+
+.hamburger-menu .menu-btn-check:checked~.menu-btn .nav_icon {
+  background-color: transparent;
+}
+
+.hamburger-menu .menu-btn-check:checked~.menu-btn .nav_icon::after {
+  transform: rotate(45deg);
+  top: 0px;
+  width: 100%;
+  background-color: #B71B26;
+}
+
+.hamburger-menu .menu-btn-check:checked~.menu-btn .nav_icon::before {
+  transform: rotate(-45deg);
+  top: 0px;
+  width: 100%;
+  background-color: #B71B26;
+}
+
+ul {
+  margin-top: 80px;
+  margin-bottom: 180px;
+}
+
+/* main concept 領域 */
+
+.text_family {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.text_family2 {
+  margin-top: 24px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 160px;
+}
+
+/* 見出し横線 */
+
+.concept {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concept::before,
+.concept::after {
+  border-top: 1px solid;
+  content: "";
+  width: 5em;
+}
+
+.concept::before {
+  margin-right: 1em;
+}
+
+.concept::after {
+  margin-left: 1em;
+}
+
+/* 文章共通設定 */
+
+.text {
+  text-align: center;
+}
+
+/* 見出し横線 */
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service::before,
+.service::after {
+  border-top: 1px solid;
+  content: "";
+  width: 5em;
+}
+
+.service::before {
+  margin-right: 1em;
+}
+
+.service::after {
+  margin-left: 1em;
+}
+
+/* ボタン作成 */
+.btn_more {
+  position: relative;
+}
+
+.btn_more::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 35.5%;
+  right: -22%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #333;
+  width: 0;
+  height: 0;
+}
+
+
+/* サービス　画像調整　SP */
+
+.service_img {
+  margin-top: 50px;
+  max-width: 93%;
+  margin-right: 3.2%;
+  margin-left: 3.2%;
+}
+
+.btn_list_item {
+  margin-right: 3.2%;
+  margin-left: 3.2%;
+}
+
+.text_left {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.btn_item1,
+.btn_item2,
+.btn_item3 {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.btn_item3 {
+  margin-bottom: 80px;
+}
+
+/* flow領域 */
+
+.flow_backcolor {
+  background: #E5E5E5;
+}
+
+
+.flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B71B26;
+}
+
+.flow::before,
+.flow::after {
+  border-top: 1px solid;
+  content: "";
+  width: 5em;
+}
+
+.flow::before {
+  margin-right: 1em;
+}
+
+.flow::after {
+  margin-left: 1em;
+}
+
+/* フォーム本体 */
+
+.flow_content {
+  display: grid;
+  grid-template-rows: 32px 32px 32px 32px 32px 32px;
+  grid-auto-columns: 300px;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.flow_item {
+  background-color: #333;
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 2rem;
+  padding: 8px;
+  margin-bottom: 4rem;
+  /* margin-top: 24px;
+  margin-bottom: 32px; */
+}
+
+/* 三角形成 */
+
+.flow_item::after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 44%;
+  border-top: 16px solid #B71B26;
+  border-right: 16px solid transparent;
+  border-left: 16px solid transparent;
+}
+
+.flow_item:last-child::after {
+  border: none;
+}
+
+/* Q&A領域 */
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question::before,
+.question::after {
+  border-top: 1px solid;
+  content: "";
+  width: 5em;
+}
+
+.question::before {
+  margin-right: 1em;
+}
+
+.question::after {
+  margin-left: 1em;
+}
+
+.black_question {
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px 12px;
+  margin-right: 5px;
+}
+
+.red_question {
+  background-color: #B71B26;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px 12px;
+  margin-right: 5px;
+}
+
+.question_content {
+  display: flex;
+  /* width: 98%;
+  height: 0.83%; */
+  margin-left: 1.2%;
+  margin-right: 3.2%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 10px;
+}
+
+.question_content2 {
+  display: flex;
+  /* width: 98%;
+  height: 1.8%; */
+  margin-left: 1.2%;
+  margin-right: 3.2%;
+  margin-bottom: 24px;
+  margin-top: 16px;
+  padding: 10px;
+}
+
+.question_item2 {
+  width: 98%;
+  height: 1.8%;
+}
+
+
+/* contact領域 */
+.text_info {
+  display: inline;
+}
+
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact::before,
+.contact::after {
+  border-top: 1px solid;
+  content: "";
+  width: 5em;
+}
+
+.contact::before {
+  margin-right: 1em;
+}
+
+.contact ::after {
+  margin-left: 1em;
+}
+
+
+.contact_top {
+  background: #E5E5E5;
+  text-align: center;
+}
+
+
+input,
+textarea {
+  background: #fff;
+  margin-bottom: 24px;
+
+}
+
+textarea {
+  width: 90%;
+}
+
+#radio_text1 {
+  margin-right: 10px;
+
+}
+
+
+.span_form {
+  background: #B71B26;
+  color: #fff;
+  padding: 4px 9.5px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+
+.label {
+
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+
+#label_add02 {
+  border: 2px solid #E5E5E5;
+  width: 90%;
+  height: 32px;
+}
+
+.label_add01 {
+  width: 33%;
+  height: 32px;
+  margin-right: 50%;
+}
+
+.cnt_text {
+  width: 90%;
+  height: 32px;
+}
+
+.submit {
+  width: 50%;
+  height: 48px;
+  background: #333;
+  color: #fff;
+  /* position: relative; */
+}
+
+
+/* .submit::after{
+  content:"";
+ position: absolute;
+ top: 0;
+ right: 0;
+ border-top: 6px solid transparent;
+ border-bottom: 6px solid transparent;
+ border-left: 6px solid #b53c86;
+ width: 0;
+ height: 0;
+} */
+
+
+
+
+#btn_submit {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+
+
+#btn_submit::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 26.9%;
+  right: 29%;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #fff;
+  width: 0;
+  height: 0;
+}
+
+
+/* footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  height: 42px;
+  margin-top: 126px;
+}
+
+.pagetop {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 42px;
+  background: #333;
+  border: solid 2px #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.pagetop_arrow {
+  height: 15px;
+  width: 15px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid#fff;
+  transform: translateY(20%) rotate(-45deg);
+}
+
+/* ページトップへ戻るボタン */
+
+/* SPからPC版 */
+
+@media screen and (min-width:768px) and (max-width:1140px) {
+
+
+  .img_item2 {
+    width: 100%;
+    height: 545px;
+    background: url(../images2/hero_2.jpg) no-repeat center/cover;
+  }
+
+
+
+  /*  サービスコンテンツ3つ横並びに*/
+  .btn_list_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* コンテンツ１つ１つサイズを29% */
+  .btn_list {
+    flex-basis: 29%;
+  }
+
+  /*  リストを横並びに*/
+  .flow_content {
+    display: grid;
+    grid-template-columns: 44px 44px 44px 44px 44px 44px;
+    justify-content: center;
+    grid-template-rows: 250px;
+    gap: 8%;
+    align-items: center;
+
+  }
+
+  /* リストの上下幅調整 */
+
+  ul {
+    margin-top: 48px;
+    margin-bottom: 48px;
+
+  }
+
+  /* リストのサイズ調整 */
+  .flow_item {
+    writing-mode: vertical-rl;
+    width: 90%;
+    height: 80%;
+
+  }
+
+  /* リスト横の三角を横並びに */
+  .flow_item::after {
+    content: "";
+    position: absolute;
+    top: 75px;
+    left: 176%;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #B71B26;
+  }
+
+  /* フォームの背景色・幅調整 */
+  form {
+    background: #E5E5E5;
+    width: 74%;
+    height: 685px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+
+  /* フォーム背景色②*/
+  .contact_top {
+    background: #cacaca;
+    height: 850px;
+  }
+
+  /* テキストの幅調整 */
+  .cnt_text {
+    width: 32%;
+    height: 24px;
+    margin-left: 5px;
+  }
+
+  /* メッセージのサイズ調整 */
+  textarea {
+    width: 80%;
+    margin-left: 5px;
+  }
+
+  /* 住所テキストサイズ調整 */
+  .label_add01 {
+    width: 83%;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  /* 住所テキストをサイズ調整 */
+  #label_add02 {
+    width: 80%;
+    height: 28px;
+    margin-left: 5px;
+  }
+
+  /* contactをPC用に横並びに */
+  .label_flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 48px;
+
+  }
+
+  .label {
+    flex-basis: 41%;
+    margin-top: 5px;
+    text-align: end;
+  }
+
+  [type="radio"] {
+    margin-top: 12px;
+    margin-left: 5px;
+  }
+
+  .text,
+  .text_add {
+    flex-basis: 59%;
+    text-align: start;
+  }
+
+
+  .text_info {
+    flex-basis: 11%;
+  }
+
+  .text_add {
+    width: 80%;
+    height: 24px;
+    margin-bottom: 24px;
+    padding-left: 5px;
+  }
+
+
+  .submit {
+    width: 165%;
+    height: 46px;
+
+  }
+
+
+  #radio_text1,
+  #radio_text2 {
+    margin-top: 7px;
+  }
+
+
+  .span_form {
+    margin-right: 0;
+  }
+
+
+  #btn_submit {
+    position: relative;
+    width: 100px;
+  }
+
+  #btn_submit::after {
+    outline: 1px solid #B71B26;
+    position: absolute;
+    right: -56px;
+    top: 18px;
+  }
+
+
+  /* ハンバーガーメニュー */
+
+  .hamburger-menu .menu-btn {
+    display: none;
+  }
+
+  .img_item {
+    display: flex;
+  }
+
+  .header_img1 {
+    margin-top: 2%;
+  }
+
+  .hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 300px;
+    max-width: 100%;
+  }
+
+  .hamburger-menu ul {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -4%;
+    flex-grow: 1;
+    max-height: 100%;
+    margin: 0;
+    width: 80%;
+    flex-basis: 55%;
+    justify-content: center;
+  }
+
+  .hamburger-menu ul li {
+    margin: 18px 13px;
+    height: 16px;
+
+  }
+
+  .hamburger-menu ul li:last-child {
+    margin-left: 5px;
+  }
+
+
+  .hamburger-menu a {
+    display: block;
+    font-size: 16px;
+    line-height: 1.0;
+  }
+
+
+
+
+
+
+}
